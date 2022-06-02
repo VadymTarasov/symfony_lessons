@@ -1,0 +1,6 @@
+172.24.0.1 - - [02/Jun/2022:11:31:45 +0000] "GET / HTTP/1.1" 404 89270 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
+172.24.0.1 - - [02/Jun/2022:11:31:48 +0000] "GET /_wdt/a38aae HTTP/1.1" 200 17334 "http://lessons.loc/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
+172.24.0.1 - - [02/Jun/2022:11:31:48 +0000] "GET /favicon.ico HTTP/1.1" 499 0 "http://lessons.loc/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
+172.21.0.1 - - [02/Jun/2022:11:42:10 +0000] "GET / HTTP/1.1" 404 89286 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
+172.21.0.1 - - [02/Jun/2022:11:42:11 +0000] "GET /favicon.ico HTTP/1.1" 499 0 "http://lessons.loc/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"
+172.21.0.1 - - [02/Jun/2022:11:42:13 +0000] "GET /_wdt/a632dc HTTP/1.1" 200 17339 "http://lessons.loc/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"

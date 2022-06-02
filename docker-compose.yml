@@ -1,0 +1,33 @@
+version: '3.5'
+services:
+    php:
+        build:
+            context: ./docker/php-fpm
+        container_name: lessons_symfony_php
+        volumes:
+            - ./project:/var/www:cached
+#            - ./logs/symfony:/var/www/var/log:cached
+        links:
+            - mysql
+
+    nginx:
+        build: ./docker/nginx
+        container_name: lessons_symfony_nginx
+        volumes:
+            - ./logs/nginx:/var/log/nginx:cached
+            - ./project:/var/www:cached
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - "80:80"
+        links:
+            - php
+
+    mysql:
+        image: mysql:8.0.29
+        restart: always
+        environment:
+            MYSQL_DATABASE: symfony
+            MYSQL_ROOT_PASSWORD: 123654789
+        ports:
+            - 3306:3306
+        container_name: project_mysql
