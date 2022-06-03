@@ -1,0 +1,23 @@
+{% extends 'main.html.twig' %}
+{% block table %}
+
+    {{ form_start(form) }}
+    <h1>Обновить продукт</h1>
+    <div class="mb-3">
+        {{ form_label(form.name, 'название') }}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="mb-3">
+        {{ form_label(form.price, 'цена') }}
+        {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="mb-3">
+        {{ form_label(form.season, 'сезон') }}
+        {{ form_widget(form.season, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    {{ form_row(form.save, { 'label': 'Отправить' }) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}
