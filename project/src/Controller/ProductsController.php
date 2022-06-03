@@ -19,15 +19,14 @@ class ProductsController extends AbstractController
     public function __construct(private readonly ProductsRepository $productsRepository)
     {
     }
-    #[Route('/')]
-    #[Route('/', name: 'product_list', methods: ['GET'])]
+    #[Route('/product', name: 'product_list', methods: ['GET'])]
     public function default(): Response
     {
         $products = $this->productsRepository->findAll();
         return $this->render('productList.html.twig', ['products' => $products]);
     }
 
-    #[Route('/add', name: 'product_add', methods: ['GET', 'POST'])]
+    #[Route('/product/add', name: 'product_add', methods: ['GET', 'POST'])]
     public function newProduct(Request $request, ManagerRegistry $registry): Response
     {
         $product = new Products();
@@ -51,7 +50,7 @@ class ProductsController extends AbstractController
         return $this->render('addProduct.html.twig', ['form' => $form->createView()]);
     }
 
-    #[Route('/delete/{id}', methods: ['GET'], requirements: ['id' => '\d+'])]
+    #[Route('/product/delete/{id}', methods: ['GET'], requirements: ['id' => '\d+'])]
     public function delete(ManagerRegistry $doctrine, int $id): Response
     {
         $entityManager = $doctrine->getManager();
@@ -68,7 +67,7 @@ class ProductsController extends AbstractController
         return $this->redirectToRoute('product_list');
     }
 
-    #[Route('/update/{id}', name: 'product_update', methods: ['GET','POST'], requirements: ['id' => '\d+'])]
+    #[Route('/product/update/{id}', name: 'product_update', methods: ['GET','POST'], requirements: ['id' => '\d+'])]
     public function update(Request $request, ManagerRegistry $doctrine, int $id): Response
     {
         $entityManager = $doctrine->getManager();
@@ -92,7 +91,7 @@ class ProductsController extends AbstractController
         return $this->render('update.html.twig', ['form' => $form->createView()]);
     }
 
-    #[Route('/show/{id}', name: 'product_show', methods: ['GET','POST'], requirements: ['id' => '\d+'])]
+    #[Route('/product/show/{id}', name: 'product_show', methods: ['GET','POST'], requirements: ['id' => '\d+'])]
     public function show(ManagerRegistry $doctrine, int $id): Response
     {
         $product = $doctrine->getRepository(Products::class)->find($id);

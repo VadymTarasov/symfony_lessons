@@ -1,10 +1,14 @@
 
         {% extends 'main.html.twig' %}
+        {% block title %}
+            <title>Продукты</title>
+        {% endblock %}
+
         {% block table %}
 
         <h1>Продукты</h1>
             <nav class="nav flex-column">
-                <a class="nav-link active" aria-current="page" href="/add">Добавить Продукт</a>
+                <a class="nav-link active" aria-current="page" href="/product/add">Добавить Продукт</a>
             </nav>
 
             <table class="table">
@@ -21,9 +25,9 @@
                     <td>{{ product.name }}</td>
                     <td>{{ product.price }}</td>
                     <td>{{ product.season }}</td>
-                    <td><a href="/update/{{ product.id }}">изменить</a></td>
-                    <td><a style="color: red" href="/delete/{{ product.id }}">удалить</a></td>
-                    <td><a style="color: #5eb5e0" href="/show/{{ product.id }}">показывать</a></td>
+                    <td><a href="/product/update/{{ product.id }}">изменить</a></td>
+                    <td><a style="color: red" href="/product/delete/{{ product.id }}">удалить</a></td>
+                    <td><a style="color: #5eb5e0" href="/product/show/{{ product.id }}">показывать</a></td>
                 </tr>
                 </tbody>
             {% endfor %}

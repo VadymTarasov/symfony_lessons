@@ -1,9 +1,12 @@
 
 {% extends 'main.html.twig' %}
+{% block title %}
+    <title>Добавить новый продукт</title>
+{% endblock %}
 {% block table %}
 
     {{ form_start(form) }}
-        <h1>Добавить новый продукт </h1>
+        <h1>Добавить новый продукт</h1>
         <div class="mb-3">
             {{ form_label(form.name, 'название') }}
             {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
